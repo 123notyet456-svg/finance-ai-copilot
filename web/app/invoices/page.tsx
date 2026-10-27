@@ -1,0 +1,15 @@
+"use client";
+import { useState } from "react";
+import { FileImage, Loader2, ScanLine } from "lucide-react";
+import { api } from "@/lib/api-client";
+import type { AgentResult } from "@/lib/types";
+import { PageHeader } from "@/components/page-header";
+import { StatusBadge } from "@/components/status-badge";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+
+const initial = { invoice_number: "SYNTHETIC-WEB-001", invoice_date: "2026-06-30", buyer_name: "虚构科技有限公司", seller_name: "合成服务有限公司", amount: "100.00", tax: "6.00", total_amount: "106.00" };
+export default function InvoicesPage() { const [form, setForm] = useState(initial); const [result, setResult] = useState<AgentResult | null>(null); const [loading, setLoading] = useState(false); const set = (key: string, value: string) => setForm((current) => ({ ...current, [key]: value })); async function submit() { setLoading(true); try { setResult(await api.auditInvoice(form)); } finally { setLoading(false); } }
+  return <><PageHeader eyebrow="员工任务" title="发票规则审核" description="上传/OCR 仍为显式 Mock；下方结构化字段会调用确定性规则服务，不使用真实发票数据。" action={<Badge tone="warning">OCR / Vision Mock</Badge>} /><div className="grid gap-5 lg:grid-cols-[360px_1fr]"><Card><CardHeader><CardTitle>合成票据</CardTitle><CardDescription>样例数据 / 非真实发票 / 不可报销</CardDescription></CardHeader><CardContent><div className="grid h-44 place-items-center rounded-xl border border-dashed bg-slate-50 text-center"><div><FileImage className="mx-auto h-8 w-8 text-slate-400" /><p className="mt-3 text-sm font-medium">票据预览占位</p><p className="mt-1 text-xs text-muted-foreground">本轮不执行真实 OCR</p></div></div><div className="mt-4 flex items-center gap-2 rounded-lg bg-blue-50 p-3 text-xs text-blue-800"><ScanLine className="h-4 w-4" />结构化字段可人工编辑后送入规则引擎</div></CardContent></Card><Card><CardHeader><CardTitle>识别字段预览</CardTitle><CardDescription>所有字段均为合成演示数据</CardDescription></CardHeader><CardContent><div className="grid gap-4 md:grid-cols-2">{[["invoice_number","发票号码"],["invoice_date","开票日期"],["buyer_name","购买方"],["seller_name","销售方"],["amount","金额"],["tax","税额"],["total_amount","价税合计"]].map(([key,label]) => <label key={key} className={key === "total_amount" ? "md:col-span-2" : ""}><span className="mb-1.5 block text-xs font-medium text-slate-600">{label}</span><Input value={form[key as keyof typeof form]} onChange={(e) => set(key, e.target.value)} /></label>)}</div><Button className="mt-5 w-full" size="lg" onClick={submit} disabled={loading}>{loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "运行规则审核"}</Button>{result && <div className="mt-5 rounded-xl border p-4"><div className="flex items-center justify-between"><p className="font-medium">审核建议</p><StatusBadge value={result.recommendation} /></div><p className="mt-3 text-sm leading-6 text-slate-600">{result.summary}</p><p className="mt-3 text-xs text-muted-foreground">不构成审批、拒绝或付款决定。</p></div>}</CardContent></Card></div></>; }

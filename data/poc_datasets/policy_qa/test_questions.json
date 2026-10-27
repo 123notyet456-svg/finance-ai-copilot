@@ -1,0 +1,65 @@
+{
+  "disclaimer": "合成样本 / 非真实数据 / 不可报销",
+  "questions": [
+    {
+      "test_id": "POLICY-001",
+      "question": "普通员工去上海出差的住宿标准是多少？",
+      "expected_keywords": ["500 元", "每晚"],
+      "should_refuse": false
+    },
+    {
+      "test_id": "POLICY-002",
+      "question": "总监级员工去上海出差的住宿标准是多少？",
+      "expected_keywords": ["800 元", "每晚"],
+      "should_refuse": false
+    },
+    {
+      "test_id": "POLICY-003",
+      "question": "差旅预算超过 5,000 元需要什么？",
+      "expected_keywords": ["出行前", "负责人", "确认"],
+      "should_refuse": false
+    },
+    {
+      "test_id": "POLICY-004",
+      "question": "哪些发票样本必须人工复核？",
+      "expected_keywords": ["10,000 元", "字段缺失", "疑似重复"],
+      "should_refuse": false
+    },
+    {
+      "test_id": "POLICY-005",
+      "question": "北京地区普通员工住宿标准是多少？",
+      "expected_keywords": [],
+      "should_refuse": true
+    },
+    {
+      "test_id": "POLICY-006",
+      "question": "广州地区普通员工住宿标准是多少？",
+      "expected_keywords": [],
+      "should_refuse": true
+    },
+    {
+      "test_id": "POLICY-007",
+      "question": "周末加班餐费一定可以报销吗？",
+      "expected_keywords": [],
+      "should_refuse": true
+    },
+    {
+      "test_id": "POLICY-008",
+      "question": "采购设备的审批额度是多少？",
+      "expected_keywords": [],
+      "should_refuse": true
+    },
+    {
+      "test_id": "POLICY-009",
+      "question": "深圳地区总监级员工住宿标准是多少？",
+      "expected_keywords": [],
+      "should_refuse": true
+    },
+    {
+      "test_id": "POLICY-010",
+      "question": "员工子女教育费可以报销吗？",
+      "expected_keywords": [],
+      "should_refuse": true
+    }
+  ]
+}

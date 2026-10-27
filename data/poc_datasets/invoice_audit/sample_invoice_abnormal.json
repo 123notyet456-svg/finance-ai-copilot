@@ -1,0 +1,13 @@
+{
+  "disclaimer": "合成样本 / 非真实数据 / 不可报销",
+  "sample_category": "abnormal",
+  "invoice_number": "SYNTHETIC-ABNORMAL-001",
+  "invoice_date": "2025-01-01",
+  "buyer_name": "错误的虚构抬头",
+  "seller_name": "合成服务有限公司",
+  "amount": "12000.00",
+  "tax": "720.00",
+  "total_amount": "12720.00",
+  "expected_review": true
+}
+

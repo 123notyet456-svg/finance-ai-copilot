@@ -1,0 +1,11 @@
+{
+  "disclaimer": "合成样本 / 非真实数据 / 不可报销",
+  "files": [
+    {"path": "invoice_audit/sample_invoice_abnormal.json", "sha256": "689923b028871b14f3334be238d00b4fa4c2450ebd7897e4e0defcc95de4d5d3"},
+    {"path": "invoice_audit/sample_invoice_edge.json", "sha256": "8ee6d4b447145dc5dff91ac3db14d0a23c36226829e0c8a66858b723b93d3752"},
+    {"path": "invoice_audit/sample_invoice_normal.json", "sha256": "a47b2bb7291664537c3ced82ce6b42798066829de3187d5d44c62f4d1a905e44"},
+    {"path": "policy_qa/sample_policy_invoice.md", "sha256": "98d911893db90da7e4abb8eda93591cd75db2bb901fd4831030d34ff330e16bc"},
+    {"path": "policy_qa/sample_policy_travel.md", "sha256": "c9faf398a41ffee04360dbb290cf8debdbc75321054182c7e07713a5653e1307"},
+    {"path": "policy_qa/test_questions.json", "sha256": "e44e0a354eb66068d40cf1787520ff6700e0d21eb81c0f8828dd7a13c02c6a3f"}
+  ]
+}

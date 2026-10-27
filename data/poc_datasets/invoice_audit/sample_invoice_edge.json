@@ -1,0 +1,13 @@
+{
+  "disclaimer": "合成样本 / 非真实数据 / 不可报销",
+  "sample_category": "edge",
+  "invoice_number": "000000SYNTHETIC-EDGE",
+  "invoice_date": "2026-06-29",
+  "buyer_name": "虚构科技有限公司",
+  "seller_name": "边界样本有限公司",
+  "amount": "9433.96",
+  "tax": "566.04",
+  "total_amount": "10000.00",
+  "expected_review": true
+}
+
