@@ -62,8 +62,6 @@ flowchart LR
 - `interfaces/`：薄 Streamlit 界面，只调用 Service。
 - `bootstrap/`：组合根，选择真实 Provider 或 Fake fallback。
 
-详细说明见 [面试版架构讲解](docs/architecture-for-interview.md)。
-
 ## 技术栈
 
 - Python 3.11+
